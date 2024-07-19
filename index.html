@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesablama</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            position: absolute;
+            top: 40%;
+            left: 30%;
+        }
+        .container{
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: flex;
+            width: 510px;
+            margin: 0 auto;
+            padding: 80px 15px;
+            overflow: hidden;
+        }
+        .header{
+            display: flex;
+            justify-content: center;
+            width: 150px;
+            position: absolute;
+            top: 15px;
+            left: 35%;
+        }
+        .header h1{
+            font-size: 18px;
+            text-transform: uppercase;
+            color: orange;
+        }
+        .hesab {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        input{
+            width: 100px;
+            padding: 2px;
+            position: relative;
+            top: -30px;
+            border: 2px solid brown;
+            color: orange;
+            margin: 0 20px;
+            text-align: right;
+            font-size: 12px;
+            outline: none;
+            padding-right: 25px;
+        }
+        button{
+            position: relative;
+            top: -30px;
+            padding: 0 10px;
+            border: 2px solid brown;
+            color: brown;
+            border-radius: 8px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .netice{
+            display: block;
+            position: absolute;
+            top: 100px;
+            left: 35px;
+        }
+        .netice p{
+            display: flex;
+            padding: 2px 0;
+            color: orange;
+            font-size: 15px;
+        }
+        .netice span{
+            font-size: 15px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hesablama</h1>
+        </div>
+        <div class="hesab">
+            <input type="text" id="a" />
+            <input type="text" id="b" />
+            <input type="text" id="c" />
+            <button onclick="beraber()">Ok</button>
+        </div>
+        
+        <div class="netice">
+            <p>Cem:  <span id="cem"></span></p>
+            <p>Orta: <span id="ort"></span></p>
+            <p>Hasil:<span id="hasil"></span></p>
+        </div>    
+    </div>
+</body>
+
+<script>
+    let a = document.getElementById('a');
+    let b = document.getElementById('b');
+    let c = document.getElementById('c');
+    let cem = document.getElementById('cem');
+    let ort = document.getElementById('ort');
+    let hasil = document.getElementById('hasil');
+
+    function beraber() {
+        cem.innerHTML = +a.value + +b.value + +c.value
+        ort.innerHTML = cem.innerHTML / 3
+        hasil.innerHTML = a.value * b.value * c.value
+    }
+</script>
+</html>
